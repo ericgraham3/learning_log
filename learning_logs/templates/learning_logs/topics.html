@@ -7,7 +7,15 @@
 <body>
 {% extends 'learning_logs/base.html' %}
 {% block content %}
-<p>Learning Log helps you keep track of learning, for any topic in which you're interested.</p>
+<p>Topics</p>
+    <ul>
+        {% for topic in topics %}
+            <li>{{ topic.text }}</li>
+        {% empty %}
+            <li>No topics have been added yet.</li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
+
 </body>
 </html>
